@@ -1,6 +1,6 @@
-package com.example.levi.time_tracker.UI.Statictics;
+package com.example.levi.time_tracker.ui.statictics;
 
-import com.example.levi.time_tracker.Model.Process;
+import com.example.levi.time_tracker.model.Process;
 import java.util.ArrayList;
 
 /**

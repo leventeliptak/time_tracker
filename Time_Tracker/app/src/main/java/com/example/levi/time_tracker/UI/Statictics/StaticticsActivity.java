@@ -1,4 +1,4 @@
-package com.example.levi.time_tracker.UI.Statictics;
+package com.example.levi.time_tracker.ui.statictics;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,7 +6,7 @@ import javax.inject.Inject;
 import java.util.ArrayList;
 
 import com.example.levi.time_tracker.R;
-import com.example.levi.time_tracker.Model.Process;
+import com.example.levi.time_tracker.model.Process;
 
 
 /**

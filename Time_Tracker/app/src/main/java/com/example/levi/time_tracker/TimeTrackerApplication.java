@@ -1,7 +1,7 @@
 package com.example.levi.time_tracker;
 
 import android.app.Application;
-import com.example.levi.time_tracker.UI.UIModule;
+import com.example.levi.time_tracker.ui.UIModule;
 /**
  * Created by Levi on 2017.04.07..
  */

@@ -1,4 +1,4 @@
-package com.example.levi.time_tracker.UI;
+package com.example.levi.time_tracker.ui;
 
 /**
  * Created by Levi on 2017.04.07..

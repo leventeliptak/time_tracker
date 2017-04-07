@@ -1,7 +1,7 @@
-package com.example.levi.time_tracker.UI.Main;
+package com.example.levi.time_tracker.ui.main;
 
-import com.example.levi.time_tracker.UI.Presenter;
-import com.example.levi.time_tracker.Model.Process;
+import com.example.levi.time_tracker.ui.Presenter;
+import com.example.levi.time_tracker.model.Process;
 
 /**
  * Created by Levi on 2017.04.07..

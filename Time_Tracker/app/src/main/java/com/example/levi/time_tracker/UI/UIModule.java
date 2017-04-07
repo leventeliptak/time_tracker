@@ -1,4 +1,4 @@
-package com.example.levi.time_tracker.UI;
+package com.example.levi.time_tracker.ui;
 
 /**
  * Created by Levi on 2017.04.07..
@@ -6,9 +6,9 @@ package com.example.levi.time_tracker.UI;
 
 import android.content.Context;
 
-import com.example.levi.time_tracker.UI.Main.MainPresenter;
-import com.example.levi.time_tracker.UI.ProcessCreator.ProcessCreatorPresenter;
-import com.example.levi.time_tracker.UI.Statictics.StaticticsPresenter;
+import com.example.levi.time_tracker.ui.main.MainPresenter;
+import com.example.levi.time_tracker.ui.processcreator.ProcessCreatorPresenter;
+import com.example.levi.time_tracker.ui.statictics.StaticticsPresenter;
 
 import javax.inject.Singleton;
 

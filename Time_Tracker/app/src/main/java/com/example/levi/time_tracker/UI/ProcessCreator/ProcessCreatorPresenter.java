@@ -1,6 +1,6 @@
-package com.example.levi.time_tracker.UI.ProcessCreator;
+package com.example.levi.time_tracker.ui.processcreator;
 
-import com.example.levi.time_tracker.UI.Presenter;
+import com.example.levi.time_tracker.ui.Presenter;
 
 /**
  * Created by Levi on 2017.04.07..
