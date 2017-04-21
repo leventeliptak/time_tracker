@@ -3,7 +3,8 @@ package com.example.levi.time_tracker.ui;
 /**
  * Created by Levi on 2017.04.07..
  */
-
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import android.content.Context;
 
 import com.example.levi.time_tracker.ui.main.MainPresenter;
@@ -14,6 +15,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import de.greenrobot.event.EventBus;
 
 @Module
 public class UIModule {
@@ -44,5 +46,18 @@ public class UIModule {
     @Singleton
     public StaticticsPresenter provideStaticticsPresenter() {
         return new StaticticsPresenter();
+    }
+
+
+    @Provides
+    @Singleton
+    public EventBus provideEventBus() {
+        return EventBus.getDefault();
+    }
+
+    @Provides
+    @Singleton
+    public Executor provideExecutor() {
+        return Executors.newFixedThreadPool(1);
     }
 }

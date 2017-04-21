@@ -1,9 +1,17 @@
 package com.example.levi.time_tracker.ui.processcreator;
 
 import com.example.levi.time_tracker.interactor.ProcessCreatorInteractor;
+import com.example.levi.time_tracker.interactor.events.DeleteProcessEvent;
+import com.example.levi.time_tracker.interactor.events.SaveProcessEvent;
 import com.example.levi.time_tracker.ui.Presenter;
 import com.example.levi.time_tracker.model.Process;
+
+import java.util.concurrent.Executor;
+
 import javax.inject.Inject;
+
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by Levi on 2017.04.07..
  */
@@ -13,6 +21,12 @@ public class ProcessCreatorPresenter extends Presenter<ProcessCreatorScreen> {
 
     @Inject
     ProcessCreatorInteractor processCreatorInteractor;
+
+    @Inject
+    Executor executor;
+
+    @Inject
+    EventBus bus;
 
     Process edited;
 
@@ -71,10 +85,28 @@ public class ProcessCreatorPresenter extends Presenter<ProcessCreatorScreen> {
     }
 
     public void SaveProcess() {
-        processCreatorInteractor.SaveProcess(edited);
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                processCreatorInteractor.SaveProcess(edited);
+            }
+        });
     }
 
     public void DeleteProcess() {
-        processCreatorInteractor.DeleteProcess(edited);
+        executor.execute(new Runnable() {
+            @Override
+            public void run() {
+                processCreatorInteractor.DeleteProcess(edited);
+            }
+        });
+    }
+
+    public void onEventMainThread(SaveProcessEvent event) {
+
+    }
+
+    public void onEventMainThread(DeleteProcessEvent event) {
+
     }
 }
