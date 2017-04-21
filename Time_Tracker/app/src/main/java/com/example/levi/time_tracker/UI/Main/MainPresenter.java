@@ -1,13 +1,23 @@
 package com.example.levi.time_tracker.ui.main;
 
+import com.example.levi.time_tracker.interactor.MainInteractor;
+import com.example.levi.time_tracker.model.TimeInterval;
 import com.example.levi.time_tracker.ui.Presenter;
 import com.example.levi.time_tracker.model.Process;
 
+import java.util.List;
+
+import javax.inject.Inject;
 /**
  * Created by Levi on 2017.04.07..
  */
 
 public class MainPresenter extends Presenter<MainScreen> {
+
+    @Inject
+    MainInteractor mainInteractor;
+
+    TimeInterval measured;
 
     public MainPresenter() {
     }
@@ -24,17 +34,20 @@ public class MainPresenter extends Presenter<MainScreen> {
 
     public void ChangeToProcess(Process process)
     {
-        //TODO: implement
+        if( measured == null)
+        {
+            if(process == null){return;}
+            measured = new TimeInterval(process,mainInteractor.GetTimeStamp(),mainInteractor.GetTimeStamp());
+        } else {
+            measured.setEnd(mainInteractor.GetTimeStamp());
+            mainInteractor.Save(measured);
+            measured = null;
+            ChangeToProcess(process);
+        }
     }
 
-    //process can be null at new process
-    public void EditProcess(Process process)
+    public List<Process> GetProcesses()
     {
-        //TODO: implement
-    }
-
-    public void ShowStatictics()
-    {
-        //TODO: implement
+       return mainInteractor.GetProcesses();
     }
 }
