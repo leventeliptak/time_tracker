@@ -6,6 +6,7 @@ import com.example.levi.time_tracker.model.Process;
 import com.example.levi.time_tracker.model.TimeInterval;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
@@ -25,6 +26,9 @@ public class MemoryRepository implements Repository {
         mProcesses.add(new Process("egyik"));
         mProcesses.add(new Process("masik"));
 
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(200),new Timestamp(201)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(4000),new Timestamp(4001)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(1), new Timestamp(200),new Timestamp(201)));
     }
 
     @Override
