@@ -31,7 +31,7 @@ public class ProcessCreatorActivity extends AppCompatActivity implements Process
     EditText edittext;
 
     String nameToSet=null;
-    Boolean set =false;
+    Boolean nameset =false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,23 +73,6 @@ public class ProcessCreatorActivity extends AppCompatActivity implements Process
             }
         });
 
-        edittext.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                //no need
-            }
-
-            public void onTextChanged(CharSequence c, int start, int before, int count) {
-               // processCreatorPresenter.SetName(edittext.getText().toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                processCreatorPresenter.SetName(edittext.getText().toString());
-            }
-        });
-
         nameToSet = getIntent().getStringExtra("process_name");
     }
 
@@ -97,9 +80,9 @@ public class ProcessCreatorActivity extends AppCompatActivity implements Process
     protected void onStart() {
         super.onStart();
         processCreatorPresenter.attachScreen(this);
-        if(!set){
+        if(!nameset){
          processCreatorPresenter.EditOrCreateProcess(nameToSet);
-            set=true;
+            nameset=true;
         }
     }
 

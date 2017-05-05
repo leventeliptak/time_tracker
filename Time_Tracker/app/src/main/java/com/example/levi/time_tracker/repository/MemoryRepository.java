@@ -81,16 +81,19 @@ public class MemoryRepository implements Repository {
 
     @Override
     public void removeProcess(Process process) {
-        for(Process p : mProcesses) {
-            Iterator<Process> toRemove = mProcesses.iterator();
-            while(toRemove.hasNext()){
-                if(toRemove.equals(process)) {
-                    toRemove.remove();
-                    return;
-                }
-                toRemove.next();
-            }
 
+        for (Iterator<Process> iterator = mProcesses.iterator(); iterator.hasNext();) {
+            Process p = iterator.next();
+            if (p.equals(process)) {
+                iterator.remove();
+            }
+        }
+
+        for (Iterator<TimeInterval> iterator = mTimeIntervals.iterator(); iterator.hasNext();) {
+            TimeInterval ti = iterator.next();
+            if (ti.getProcess().equals(process)) {
+                iterator.remove();
+            }
         }
     }
 
