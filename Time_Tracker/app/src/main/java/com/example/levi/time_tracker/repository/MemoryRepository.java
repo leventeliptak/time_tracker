@@ -27,9 +27,9 @@ public class MemoryRepository implements Repository {
         mProcesses.add(new Process("masik"));
 
         mTimeIntervals= new ArrayList<TimeInterval>();
-        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(200),new Timestamp(600200)));
-        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(4000),new Timestamp(654000)));
-        mTimeIntervals.add(new TimeInterval(mProcesses.get(1), new Timestamp(200),new Timestamp(220201)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(200),new Timestamp(6000200)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(4000),new Timestamp(6054000)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(1), new Timestamp(200),new Timestamp(2200201)));
     }
 
     @Override

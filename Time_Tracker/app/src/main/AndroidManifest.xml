@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.levi.time_tracker" >
-
+    package="com.example.levi.time_tracker"
+    >
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
@@ -32,6 +34,10 @@
         </activity>
         <activity android:name=".ui.processcreator.ProcessCreatorActivity" >  </activity>
         <activity android:name=".ui.statictics.StaticticsActivity" > </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="9680480e9e66291c32d18d360786f615f878d03e" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

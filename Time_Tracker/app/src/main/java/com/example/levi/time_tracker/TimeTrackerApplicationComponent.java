@@ -7,7 +7,6 @@ import dagger.Component;
 import com.example.levi.time_tracker.interactor.ProcessCreatorInteractor;
 import com.example.levi.time_tracker.interactor.StaticticsInteractor;
 import com.example.levi.time_tracker.ui.main.MainActivity;
-import com.example.levi.time_tracker.ui.main.MainActivity_MembersInjector;
 import com.example.levi.time_tracker.ui.main.MainPresenter;
 import com.example.levi.time_tracker.ui.processcreator.ProcessCreatorActivity;
 import com.example.levi.time_tracker.ui.processcreator.ProcessCreatorPresenter;

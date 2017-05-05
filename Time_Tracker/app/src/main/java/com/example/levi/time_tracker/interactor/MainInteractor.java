@@ -5,6 +5,7 @@ import com.example.levi.time_tracker.interactor.events.GetProcessEvent;
 import com.example.levi.time_tracker.interactor.events.GetProcessesEvent;
 import com.example.levi.time_tracker.interactor.events.SaveTimeInternalsEvent;
 import com.example.levi.time_tracker.model.TimeInterval;
+import com.example.levi.time_tracker.network.TimeTrackerApi;
 import com.example.levi.time_tracker.repository.Repository;
 import de.greenrobot.event.EventBus;
 import java.sql.Timestamp;
@@ -22,6 +23,9 @@ public class MainInteractor {
     @Inject
     EventBus bus;
 
+   // @Inject
+   // TimeTrackerApi network;
+
     public MainInteractor() {
         TimeTrackerApplication.injector.inject(this);
     }
@@ -33,6 +37,7 @@ public class MainInteractor {
 
     public void Save(TimeInterval timeInterval)
     {
+
         SaveTimeInternalsEvent event = new SaveTimeInternalsEvent();
         try {
 

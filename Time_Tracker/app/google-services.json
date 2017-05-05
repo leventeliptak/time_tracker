@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "269987469480",
+    "project_id": "firebase-timetrackerapplicatio"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269987469480:android:3035e97dc4390a68",
+        "android_client_info": {
+          "package_name": "com.example.levi.time_tracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDANLWUNyDLzXL5n7a35tm4h-57nhiz-dI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-98577902-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

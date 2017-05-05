@@ -10,6 +10,8 @@ import com.example.levi.time_tracker.model.Process;
 import com.example.levi.time_tracker.ui.processcreator.ProcessCreatorActivity;
 import com.example.levi.time_tracker.ui.statictics.StaticticsActivity;
 import com.example.levi.time_tracker.utils.CustomGridViewAdapter;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,7 +22,8 @@ import android.widget.GridView;
 import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import io.fabric.sdk.android.Fabric;
+import com.crashlytics.android.Crashlytics;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,9 +36,12 @@ public class MainActivity extends AppCompatActivity implements MainScreen{
     MainPresenter mainPresenter;
     GridView gridView;
 
+    private Tracker mTracker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
         TimeTrackerApplication.injector.inject(this);
 
@@ -56,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements MainScreen{
         });
 
         gridView = (GridView) findViewById(R.id.gridView1);
+
+        TimeTrackerApplication application = (TimeTrackerApplication) getApplication();
+        mTracker = application.getDefaultTracker();
     }
 
     @Override
@@ -63,6 +72,11 @@ public class MainActivity extends AppCompatActivity implements MainScreen{
         super.onStart();
         mainPresenter.attachScreen(this);
         mainPresenter.GetProcesses();
+        mTracker.send(new HitBuilders.EventBuilder()
+                .setCategory("Action")
+                .setAction("Share")
+                .build());
+
     }
 
     @Override
