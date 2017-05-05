@@ -21,6 +21,8 @@ public interface Repository {
 
     List<Process> getProcesses();
 
+    Process getProcess(String process);
+
     void saveProcesses(List<Process> processes);
 
     void updateProcess(Process process);

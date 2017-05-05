@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Levi on 2017.04.21..
  */
 
-public class GetprocessesEvent extends Event{
+public class GetProcessesEvent extends Event{
     List<Process> Processes;
 
     public List<Process> getProcesses() {

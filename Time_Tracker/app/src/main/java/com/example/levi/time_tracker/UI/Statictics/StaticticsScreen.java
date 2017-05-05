@@ -9,5 +9,9 @@ import java.util.ArrayList;
 
 public interface StaticticsScreen {
 
-    void refreshData(ArrayList<Process> processes, ArrayList<Integer> SumHours);
+    void refreshData(ArrayList<String> processes, ArrayList<Integer> SumHours);
+
+    public void startProcessCreator();
+
+    public void startMain();
 }

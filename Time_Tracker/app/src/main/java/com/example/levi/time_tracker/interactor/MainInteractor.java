@@ -1,14 +1,13 @@
 package com.example.levi.time_tracker.interactor;
 
 import com.example.levi.time_tracker.TimeTrackerApplication;
-import com.example.levi.time_tracker.interactor.events.GetprocessesEvent;
+import com.example.levi.time_tracker.interactor.events.GetProcessEvent;
+import com.example.levi.time_tracker.interactor.events.GetProcessesEvent;
 import com.example.levi.time_tracker.interactor.events.SaveTimeInternalsEvent;
-import com.example.levi.time_tracker.model.Process;
 import com.example.levi.time_tracker.model.TimeInterval;
 import com.example.levi.time_tracker.repository.Repository;
 import de.greenrobot.event.EventBus;
 import java.sql.Timestamp;
-import java.util.List;
 
 import javax.inject.Inject;
 /**
@@ -46,11 +45,23 @@ public class MainInteractor {
     }
     public void GetProcesses()
     {
-        GetprocessesEvent  event = new GetprocessesEvent();
+        GetProcessesEvent event = new GetProcessesEvent();
 
         try {
-
             event.setProcesses(repository.getProcesses());
+            bus.post(event);
+        } catch (Exception e) {
+            event.setThrowable(e);
+            bus.post(event);
+        }
+    }
+
+    public void GetProcess(String process)
+    {
+        GetProcessEvent event = new GetProcessEvent();
+
+        try {
+            event.setProcess(repository.getProcess(process));
             bus.post(event);
         } catch (Exception e) {
             event.setThrowable(e);

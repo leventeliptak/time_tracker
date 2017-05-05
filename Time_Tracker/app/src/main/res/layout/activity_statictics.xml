@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.levi.time_tracker.ui.statictics.StaticticsActivity">
+
+    <LinearLayout
+        android:id="@+id/statictics_header"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/statictics_left_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green"
+            android:text="@string/create_process" />
+
+        <Button
+            android:id="@+id/statictics_right_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/blue"
+            android:text="@string/track_time" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/statictics_datepicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statictics_header" />
+
+    <LinearLayout
+        android:id="@+id/statictics_row1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statictics_datepicker"
+        >
+
+        <TextView
+            android:id="@+id/statictics_left_1"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/statictics_right_1"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/statictics_row2"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statictics_row1">
+
+        <TextView
+            android:id="@+id/statictics_left_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/statictics_right_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:gravity="end"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/statictics_row3"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/statictics_row2">
+
+        <TextView
+            android:id="@+id/statictics_left_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/statictics_right_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textAlignment="textEnd"
+            android:gravity="end" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -2,6 +2,7 @@ package com.example.levi.time_tracker.interactor;
 
 import com.example.levi.time_tracker.TimeTrackerApplication;
 import com.example.levi.time_tracker.interactor.events.DeleteProcessEvent;
+import com.example.levi.time_tracker.interactor.events.GetProcessEvent;
 import com.example.levi.time_tracker.interactor.events.SaveProcessEvent;
 import com.example.levi.time_tracker.repository.Repository;
 import com.example.levi.time_tracker.model.Process;
@@ -41,7 +42,22 @@ public class ProcessCreatorInteractor {
     public void DeleteProcess(Process process) {
         DeleteProcessEvent event = new DeleteProcessEvent();
         try {
-            repository.removeProcess(process);
+            if(process != null) {
+                repository.removeProcess(process);
+            }
+            bus.post(event);
+        } catch (Exception e) {
+            event.setThrowable(e);
+            bus.post(event);
+        }
+    }
+
+    public void GetProcess(String process)
+    {
+        GetProcessEvent event = new GetProcessEvent();
+
+        try {
+            event.setProcess(repository.getProcess(process));
             bus.post(event);
         } catch (Exception e) {
             event.setThrowable(e);

@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">Time_Tracker</string>
+    <string name="app_name">Time Tracker</string>
+    <string name="description">This is a sample app for track your time.</string>
+    <string name="create_process">Create process</string>
+    <string name="statictics">Statictics</string>
+    <string name="track_time">Track time</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+    <string name="red">red</string>
+    <string name="green">green</string>
+    <string name="blue">blue</string>
 </resources>

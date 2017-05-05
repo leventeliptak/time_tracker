@@ -1,6 +1,8 @@
 package com.example.levi.time_tracker.model;
 
 import com.orm.dsl.Table;
+
+import java.sql.Time;
 import java.sql.Timestamp;
 
 /**
@@ -33,6 +35,9 @@ public class TimeInterval {
         return end;
     }
 
+    public long getMinutes(){
+        return (end.getTime()-begin.getTime())/60000;
+    }
     public void setEnd(Timestamp end) {
         this.end = end;
     }

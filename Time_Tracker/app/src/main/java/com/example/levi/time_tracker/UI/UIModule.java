@@ -52,12 +52,14 @@ public class UIModule {
     @Provides
     @Singleton
     public EventBus provideEventBus() {
+
         return EventBus.getDefault();
     }
 
     @Provides
     @Singleton
     public Executor provideExecutor() {
+
         return Executors.newFixedThreadPool(1);
     }
 }

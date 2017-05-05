@@ -14,6 +14,7 @@ import java.util.List;
 import static com.example.levi.time_tracker.model.TimeInterval.*;
 import static com.orm.SugarRecord.findWithQuery;
 import static com.orm.SugarRecord.isSugarEntity;
+import static com.orm.SugarRecord.save;
 
 /**
  * Created by Levi on 2017.04.07..
@@ -33,6 +34,12 @@ public class SugarORMRepository implements Repository {
     @Override
     public List<Process> getProcesses() {
        return SugarRecord.listAll(Process.class);
+    }
+
+    @Override
+    public Process getProcess(String process) {
+        List<Process> element = SugarRecord.find(Process.class, "name = ? ", process);
+        return element == null ? null : element.get(0);
     }
 
     @Override

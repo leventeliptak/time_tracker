@@ -22,13 +22,14 @@ public class MemoryRepository implements Repository {
 
     @Override
     public void open(Context context) {
-        mProcesses = new ArrayList<>();
+        mProcesses = new ArrayList<Process>();
         mProcesses.add(new Process("egyik"));
         mProcesses.add(new Process("masik"));
 
-        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(200),new Timestamp(201)));
-        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(4000),new Timestamp(4001)));
-        mTimeIntervals.add(new TimeInterval(mProcesses.get(1), new Timestamp(200),new Timestamp(201)));
+        mTimeIntervals= new ArrayList<TimeInterval>();
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(200),new Timestamp(600200)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(0), new Timestamp(4000),new Timestamp(654000)));
+        mTimeIntervals.add(new TimeInterval(mProcesses.get(1), new Timestamp(200),new Timestamp(220201)));
     }
 
     @Override
@@ -39,6 +40,17 @@ public class MemoryRepository implements Repository {
     @Override
     public List<Process> getProcesses() {
         return mProcesses;
+    }
+
+    @Override
+    public Process getProcess(String process) {
+        for(Process p : mProcesses) {
+            if(p.getName().equals(process))
+            {
+                return p;
+            }
+        }
+        return null;
     }
 
     @Override
@@ -60,6 +72,8 @@ public class MemoryRepository implements Repository {
         }
         if(toUpdate == null) {
             mProcesses.add(process);
+            String s = null;
+            s.length();
         } else {
             toUpdate = process;
         }
@@ -89,9 +103,9 @@ public class MemoryRepository implements Repository {
     public List<TimeInterval> GetTimeIntervals(Date date) {
         List<TimeInterval> ret = new ArrayList<>();
         for(TimeInterval t : mTimeIntervals) {
-            if(t.getBegin().compareTo(date)<=0 && t.getEnd().compareTo(date) >= 0){
+         //   if(t.getBegin().compareTo(date)<=0 && t.getEnd().compareTo(date) >= 0){
                 ret.add(t);
-            }
+        //    }
         }
         return ret;
     }
